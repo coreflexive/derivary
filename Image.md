@@ -5,4 +5,4 @@
 >2. $B \in \textsf{Set}$
 
 >[!define]
->1. $\textsf{Kernel} = (\lambda R \mid R \in A \sim B : R^{\circ} \cdot R)$
+>1. $\textsf{Image} = (\lambda R \mid R \in A \sim B : R \cdot R^{\circ})$
