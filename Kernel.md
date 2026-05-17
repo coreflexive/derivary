@@ -6,3 +6,6 @@
 
 >[!define]
 >1. $\textsf{Kernel} = (\lambda R \mid R \in A \sim B : R^{\circ} \cdot R)$
+
+>[!observe]
+>1. $\textsf{Kernel} \in (B \sim B) \leftarrow (A \sim B)$

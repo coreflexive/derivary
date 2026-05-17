@@ -2,6 +2,9 @@
 >1. $A \in \textsf{Set}$
 >2. $R \in A \sim A$
 
->[!import]
+>[!assume]
 >1. [[Preorder]] $R$
 >2. [[Antisymmetric]] $R$
+
+
+

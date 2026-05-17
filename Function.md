@@ -5,6 +5,6 @@
 >[!param]
 >3. $R \in A \sim B$
 
->[!import]
+>[!assume]
 >4. [[Entire]] $R$
 >5. [[Simple]] $R$

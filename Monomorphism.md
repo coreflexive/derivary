@@ -8,8 +8,6 @@
 >3. $f \in A \sim B$
 >
 
->[!import]
->1. [[Function]] $f$
-
 >[!assume]
+>1. [[Function]] $f$
 >2. $(\forall b,'b \mid b \mathbin{S} b' : (\mathop{f}b) \mathbin{R} (\mathop{f} b'))$

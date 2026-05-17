@@ -9,3 +9,6 @@
 
 >[!observe]
 >4. $(\forall x, y \mid x \mathbin{R} y \wedge y \mathbin{R} x : x = y)$
+
+>[!observe]
+>1. [[Skeletal]] $R$
