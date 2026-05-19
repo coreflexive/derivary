@@ -1,0 +1,421 @@
+/* ============================================================
+   Structured Theory Callouts for Obsidian
+
+   Callout types:
+   - [!theory]
+   - [!import]
+   - [!iparam]
+   - [!param]
+   - [!assume]
+   - [!observe]
+   - [!define]
+
+   Intended list usage:
+   - [!import]  uses ordered lists -> I1, I2, I3, ...
+   - [!iparam]  uses ordered lists -> {P1}, {P2}, {P3}, ...
+   - [!param]   uses ordered lists -> P1, P2, P3, ...
+   - [!assume]  uses ordered lists -> A1, A2, A3, ...
+   - [!observe] uses ordered lists -> O1, O2, O3, ...
+   - [!define]  uses ordered lists -> Δ1, Δ2, Δ3, ...
+
+   Colour convention:
+   - Imports:              Muted violet / structural dependency
+   - Parameters:           Warm grey
+   - Implicit parameters:  Warm grey, dotted and subdued
+   - Assumptions:          Muted red-brown
+   - Observations:         Slate blue
+   - Definitions:          Sage green
+
+   Counter behaviour:
+   - Counters reset once per rendered note.
+   - Multiple callouts of the same kind continue numbering.
+   - Implicit and explicit parameters share the same parameter counter.
+   - Imports, parameters, assumptions, observations, and definitions may be interleaved.
+   ============================================================ */
+
+
+/* ---------- Structured theory colour variables ---------- */
+
+.markdown-preview-view {
+  --st-import-color: #4f3670;
+  --st-param-color: #4f5048;
+  --st-assume-color: #7f342f;
+  --st-observe-color: #1f5284;
+  --st-define-color: #28683b;
+}
+
+
+/* ---------- Note-level counter state ---------- */
+
+.markdown-preview-view .markdown-preview-sizer {
+  counter-reset:
+    import
+    parameter
+    assumption
+    observation
+    definition;
+}
+
+
+/* ---------- Shared structure ---------- */
+
+.callout[data-callout="theory"],
+.callout[data-callout="import"],
+.callout[data-callout="iparam"],
+.callout[data-callout="param"],
+.callout[data-callout="assume"],
+.callout[data-callout="observe"],
+.callout[data-callout="define"] {
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+
+/* ---------- Remove default callout icons ---------- */
+
+.callout[data-callout="theory"] .callout-icon,
+.callout[data-callout="import"] .callout-icon,
+.callout[data-callout="iparam"] .callout-icon,
+.callout[data-callout="param"] .callout-icon,
+.callout[data-callout="assume"] .callout-icon,
+.callout[data-callout="observe"] .callout-icon,
+.callout[data-callout="define"] .callout-icon {
+  display: none;
+}
+
+
+/* ---------- Theory heading ---------- */
+
+.callout[data-callout="theory"] {
+  border: 1px solid var(--text-muted);
+  padding: 0.65em 0.85em;
+  margin: 1em 0 0.8em 0;
+}
+
+.callout[data-callout="theory"] .callout-title {
+  color: var(--text-normal);
+  padding: 0;
+  gap: 0;
+  font-weight: 700;
+}
+
+.callout[data-callout="theory"] .callout-title-inner::before {
+  content: "§";
+  font-weight: 400;
+  margin-right: 0.8em;
+}
+
+.callout[data-callout="theory"] .callout-content {
+  margin: 0.35em 0 0 1.7em;
+  color: var(--text-muted);
+}
+
+
+/* ---------- Section callouts ---------- */
+
+.callout[data-callout="import"],
+.callout[data-callout="iparam"],
+.callout[data-callout="param"],
+.callout[data-callout="assume"],
+.callout[data-callout="observe"],
+.callout[data-callout="define"] {
+  border: none;
+  border-left: 3px solid;
+  padding: 0.25em 0 0.25em 0.85em;
+  margin: 0.7em 0;
+}
+
+
+/* ---------- Section colours ---------- */
+
+.callout[data-callout="import"] {
+  border-left-color: var(--st-import-color);
+}
+
+.callout[data-callout="iparam"] {
+  border-left-color: var(--st-param-color);
+  border-left-style: dotted;
+  opacity: 0.86;
+}
+
+.callout[data-callout="param"] {
+  border-left-color: var(--st-param-color);
+}
+
+.callout[data-callout="assume"] {
+  border-left-color: var(--st-assume-color);
+}
+
+.callout[data-callout="observe"] {
+  border-left-color: var(--st-observe-color);
+}
+
+.callout[data-callout="define"] {
+  border-left-color: var(--st-define-color);
+}
+
+
+/* ---------- Section titles ---------- */
+
+.callout[data-callout="import"] .callout-title,
+.callout[data-callout="iparam"] .callout-title,
+.callout[data-callout="param"] .callout-title,
+.callout[data-callout="assume"] .callout-title,
+.callout[data-callout="observe"] .callout-title,
+.callout[data-callout="define"] .callout-title {
+  padding: 0;
+  margin: 0 0 0.25em 0;
+  gap: 0;
+  font-size: 0.95em;
+  font-weight: 650;
+}
+
+
+/* ---------- Section title colours ---------- */
+
+.callout[data-callout="import"] .callout-title {
+  color: var(--st-import-color);
+}
+
+.callout[data-callout="iparam"] .callout-title {
+  color: var(--st-param-color);
+}
+
+.callout[data-callout="param"] .callout-title {
+  color: var(--st-param-color);
+}
+
+.callout[data-callout="assume"] .callout-title {
+  color: var(--st-assume-color);
+}
+
+.callout[data-callout="observe"] .callout-title {
+  color: var(--st-observe-color);
+}
+
+.callout[data-callout="define"] .callout-title {
+  color: var(--st-define-color);
+}
+
+
+/* ---------- Section title markers ---------- */
+
+.callout[data-callout="import"] .callout-title-inner::before {
+  content: "*";
+  color: var(--st-import-color);
+  font-weight: 400;
+  margin-right: 0.9em;
+}
+
+.callout[data-callout="iparam"] .callout-title-inner::before {
+  content: "{}";
+  color: var(--st-param-color);
+  font-weight: 400;
+  margin-right: 0.9em;
+}
+
+.callout[data-callout="param"] .callout-title-inner::before {
+  content: "+";
+  color: var(--st-param-color);
+  font-weight: 400;
+  margin-right: 0.9em;
+}
+
+.callout[data-callout="assume"] .callout-title-inner::before {
+  content: "-";
+  color: var(--st-assume-color);
+  font-weight: 400;
+  margin-right: 0.9em;
+}
+
+.callout[data-callout="observe"] .callout-title-inner::before {
+  content: "+";
+  color: var(--st-observe-color);
+  font-weight: 400;
+  margin-right: 0.9em;
+}
+
+.callout[data-callout="define"] .callout-title-inner::before {
+  content: "+";
+  color: var(--st-define-color);
+  font-weight: 400;
+  margin-right: 0.9em;
+}
+
+
+/* ---------- Section content ---------- */
+
+.callout[data-callout="import"] .callout-content,
+.callout[data-callout="iparam"] .callout-content,
+.callout[data-callout="param"] .callout-content,
+.callout[data-callout="assume"] .callout-content,
+.callout[data-callout="observe"] .callout-content,
+.callout[data-callout="define"] .callout-content {
+  margin: 0;
+}
+
+
+/* ---------- Shared labelled ordered-list layout ---------- */
+
+.callout[data-callout="import"] ol,
+.callout[data-callout="iparam"] ol,
+.callout[data-callout="param"] ol,
+.callout[data-callout="assume"] ol,
+.callout[data-callout="observe"] ol,
+.callout[data-callout="define"] ol {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+.callout[data-callout="import"] ol > li,
+.callout[data-callout="iparam"] ol > li,
+.callout[data-callout="param"] ol > li,
+.callout[data-callout="assume"] ol > li,
+.callout[data-callout="observe"] ol > li,
+.callout[data-callout="define"] ol > li {
+  position: relative;
+  display: block;
+  padding-left: 3.1em;
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+}
+
+
+/* ---------- Multi-line item alignment ---------- */
+
+.callout[data-callout="import"] ol > li::before,
+.callout[data-callout="iparam"] ol > li::before,
+.callout[data-callout="param"] ol > li::before,
+.callout[data-callout="assume"] ol > li::before,
+.callout[data-callout="observe"] ol > li::before,
+.callout[data-callout="define"] ol > li::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2.5em;
+  font-weight: 650;
+}
+
+.callout[data-callout="import"] ol > li > p,
+.callout[data-callout="iparam"] ol > li > p,
+.callout[data-callout="param"] ol > li > p,
+.callout[data-callout="assume"] ol > li > p,
+.callout[data-callout="observe"] ol > li > p,
+.callout[data-callout="define"] ol > li > p {
+  margin-top: 0;
+  margin-bottom: 0.35em;
+}
+
+
+/* ---------- Imports: compact spacing ---------- */
+
+.callout[data-callout="import"] {
+  margin: 0.35em 0;
+}
+
+.callout[data-callout="import"] .callout-title {
+  margin-bottom: 0.1em;
+}
+
+.callout[data-callout="import"] ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.callout[data-callout="import"] ol > li {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.callout[data-callout="import"] ol > li > p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+/* ---------- Imports: I1, I2, I3, ... ---------- */
+
+.callout[data-callout="import"] ol > li {
+  counter-increment: import;
+}
+
+.callout[data-callout="import"] ol > li::before {
+  content: "I" counter(import);
+  color: var(--st-import-color);
+}
+
+
+/* ---------- Implicit parameters: {P1}, {P2}, {P3}, ... ---------- */
+
+.callout[data-callout="iparam"] ol > li {
+  counter-increment: parameter;
+}
+
+.callout[data-callout="iparam"] ol > li::before {
+  content: "{P" counter(parameter) "}";
+  color: var(--st-param-color);
+  opacity: 0.86;
+}
+
+
+/* ---------- Parameters: P1, P2, P3, ... ---------- */
+
+.callout[data-callout="param"] ol > li {
+  counter-increment: parameter;
+}
+
+.callout[data-callout="param"] ol > li::before {
+  content: "P" counter(parameter);
+  color: var(--st-param-color);
+}
+
+
+/* ---------- Assumptions: A1, A2, A3, ... ---------- */
+
+.callout[data-callout="assume"] ol > li {
+  counter-increment: assumption;
+}
+
+.callout[data-callout="assume"] ol > li::before {
+  content: "A" counter(assumption);
+  color: var(--st-assume-color);
+}
+
+
+/* ---------- Observations: O1, O2, O3, ... ---------- */
+
+.callout[data-callout="observe"] ol > li {
+  counter-increment: observation;
+}
+
+.callout[data-callout="observe"] ol > li::before {
+  content: "O" counter(observation);
+  color: var(--st-observe-color);
+}
+
+
+/* ---------- Definitions: Δ1, Δ2, Δ3, ... ---------- */
+
+.callout[data-callout="define"] ol > li {
+  counter-increment: definition;
+}
+
+.callout[data-callout="define"] ol > li::before {
+  content: "Δ" counter(definition);
+  color: var(--st-define-color);
+}
+
+
+/* ---------- MathJax alignment tweaks ---------- */
+
+.callout[data-callout="import"] mjx-container,
+.callout[data-callout="iparam"] mjx-container,
+.callout[data-callout="param"] mjx-container,
+.callout[data-callout="assume"] mjx-container,
+.callout[data-callout="observe"] mjx-container,
+.callout[data-callout="define"] mjx-container {
+  margin: 0;
+}

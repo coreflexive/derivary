@@ -1,1 +1,4 @@
-/.obsidian
+.obsidian/*
+!.obsidian/snippets/
+.obsidian/snippets/*
+!.obsidian/snippets/structured-theory.css
