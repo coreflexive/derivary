@@ -9,3 +9,4 @@
 
 >[!observe]
 >4. $(\forall a \mid a \in A : a \mathbin{R} a)$
+
