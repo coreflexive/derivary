@@ -1,3 +1,5 @@
+#combinator
+
 >[!iparam]
 >1. $A \in \textsf{Set}$
 

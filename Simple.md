@@ -1,3 +1,5 @@
+#predicate
+
 >[!iparam]
 >1. $A \in \textsf{Set}$
 >2. $B \in \textsf{Set}$
