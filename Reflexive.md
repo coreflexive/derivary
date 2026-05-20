@@ -11,3 +11,4 @@
 
 >[!observe]
 >4. $(\forall a \mid a \in A : a \mathbin{R} a)$
+>5. $(\forall a \mid a \in X : (\exists x \mid x \in X : a \mathbin{R} a)) \Leftarrow X \subseteq A$

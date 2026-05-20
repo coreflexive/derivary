@@ -12,4 +12,4 @@
 
 >[!observe]
 >1. $\textsf{id}_B \subseteq \overset{\smile}{R} \cdot R$
->2. $(\forall x \mid x \in B : (\exists a \mid a \in A : a \mathbin{R}))$
+>2. $(\forall x \mid x \in B : (\exists a \mid a \in A : a \mathbin{R} x))$
