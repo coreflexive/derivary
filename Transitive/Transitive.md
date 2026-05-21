@@ -10,4 +10,4 @@
 >3. $R \cdot R \subseteq R$
 
 >[!observe]
->4. $(\forall x,y,z \mid x \mathbin{R} y \wedge y \mathbin{R} z : x \mathbin{R} z)$
+>4. $(\forall x,y,z \mid x \mathbin{R} y \wedge y \mathbin{R} z : x \mathbin{R} z)$ #needs-writeup
