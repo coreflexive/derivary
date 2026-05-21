@@ -10,7 +10,7 @@
 >3. $R \cap R^{\circ} \subseteq \textsf{id}$
 
 >[!observe]
->4. $(\forall x, y \mid x \mathbin{R} y \wedge y \mathbin{R} x : x = y)$
+>4. $(\forall x, y \mid x \mathbin{R} y \wedge y \mathbin{R} x : x = y)$ #needs-writeup
 
 >[!observe]
->1. [[Skeletal]] $R$
+>5. [[Skeletal]] $R$ #needs-writeup 
