@@ -1,3 +1,5 @@
+#law
+
 >[!iparam]
 >1. $A \in \textsf{Set}$
 >2. $R \in A \sim A$
