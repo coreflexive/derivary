@@ -10,4 +10,4 @@
 >3. [[Predicate]] $p$
 
 >[!define]
->4. $\mathop{{\textsf{some}}} p \; \equiv \; (\exists x \mid : \mathop{p} x)$ #needs-writeup 
+>4. $\mathop{{\textsf{some}}} p \; \equiv \; (\exists x \mid : \mathop{p} x)$ 

@@ -10,4 +10,4 @@
 >3. [[Predicate]] $p$
 
 >[!define]
->4. $\mathop{{\textsf{lone}}} p \; \equiv \; (\forall y,z \mid \mathop{p} y \wedge \mathop{p} z : y = z)$ #needs-writeup 
+>4. $\mathop{{\textsf{lone}}} p \; \equiv \; (\forall y,z \mid \mathop{p} y \wedge \mathop{p} z : y = z)$

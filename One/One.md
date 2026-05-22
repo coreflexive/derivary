@@ -10,7 +10,7 @@
 >3. [[Predicate]] $p$
 
 >[!define]
->4. $\mathop{{\textsf{one}}} p \; \equiv \; (\exists x \mid \mathop{p} x : (\forall y \mid \mathop{p} y : y = x))$ #needs-writeup 
+>4. $\mathop{{\textsf{one}}} p \; \equiv \; (\exists x \mid \mathop{p} x : (\forall y \mid \mathop{p} y : y = x))$
 
 >[!observe]
 >5. $\mathop{{\textsf{one}}} p \; \equiv \; (\exists x \mid : (\forall y \mid \mathop{p} y \equiv y = x))$ #needs-writeup 
