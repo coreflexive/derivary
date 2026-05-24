@@ -1,18 +1,13 @@
 #law
 
->[!iparam]
->1. $A \in \textsf{Set}$
->2. $R \in A \sim A$
->3. $p \in \mathbb{B} \sim A$
-
->[!assume]
->4. [[Predicate]] $p$
->5. [[Partial order]] $R$
+>[!import]
+>1. [[Predicate]]
+>2. [[Partial order]]
 
 >[!observe]
->6. $(\forall x, y \mid \mathop{p} x \wedge \mathop{p} y : x = y \equiv (\forall z \mid \mathop{p} z : z \mathbin{R} x \equiv z \mathbin{R} y))$ #needs-writeup 
->7. $(\forall x, y \mid : x = y \equiv (\forall z \mid : z \mathbin{R} x \equiv z \mathbin{R} y))$ #needs-writeup
+>3. $(\forall x, y \mid \mathop{p} x \wedge \mathop{p} y : x = y \equiv (\forall z \mid \mathop{p} z : z \mathbin{R} x \equiv z \mathbin{R} y))$ #needs-writeup 
+>4. $(\forall x, y \mid : x = y \equiv (\forall z \mid : z \mathbin{R} x \equiv z \mathbin{R} y))$ #needs-writeup
 
 >[!observe]
->8. $(\forall x, y \mid \mathop{p} x \wedge \mathop{p} y : x = y \equiv (\forall z \mid \mathop{p} z : y \mathbin{R} z \equiv x \mathbin{R} z))$ #needs-writeup
->9. $(\forall x, y \mid : x = y \equiv (\forall z \mid : y \mathbin{R} z \equiv x \mathbin{R} z))$ #needs-writeup
+>5. $(\forall x, y \mid \mathop{p} x \wedge \mathop{p} y : x = y \equiv (\forall z \mid \mathop{p} z : y \mathbin{R} z \equiv x \mathbin{R} z))$ #needs-writeup
+>6. $(\forall x, y \mid : x = y \equiv (\forall z \mid : y \mathbin{R} z \equiv x \mathbin{R} z))$ #needs-writeup
