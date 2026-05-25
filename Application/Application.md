@@ -10,10 +10,10 @@
 
 >[!assume]
 >1. [[Simple]] $R$
->2. $x \in \mathop{\textsf{dom}}$
+>2. $x \in \mathop{\textsf{dom}} R$
 
 >[!define] Apply
->1. **apply** $R$ $x$ $\triangleq$ [[Iota|iota]] $(y \mid : y \mathbin{R} x)$
+>3. **apply** $R$ $x$ $\triangleq$ [[Iota|iota]] $(y \mid : y \mathbin{R} x)$
 
 >[!define] Apply (sugared)
->2. $R.x \triangleq$ **apply** $R$ $x$
+>4. $R.x \triangleq$ **apply** $R$ $x$
