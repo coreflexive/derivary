@@ -9,10 +9,11 @@
 >[!param]
 >3. $S \in B \sim C$
 >4. $y \in C$
+>5. $w \in A$
 
 >[!assume]
->5. **Simple** $S$
->6. $y \in$ **dom** $S$
+>6. **Simple** $S$
+>7. $y \in$ **dom** $S$
 
->[!observe] Domain membership
->7. $S.y \in \mathop{\textsf{dom}} R \; \equiv \; y \in \mathop{\textsf{dom}} (R \cdot S)$ #needs-writeup 
+>[!observe] Fusion
+>8. $w = \mathop{R} (S.y) \; \equiv \; w \mathbin{(R \cdot S)} y$ #needs-writeup 

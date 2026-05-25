@@ -15,4 +15,4 @@
 >6. $y \in$ **dom** $S$
 
 >[!observe] Domain membership
->7. $S.y \in \mathop{\textsf{dom}} R \; \equiv \; y \in \mathop{\textsf{dom}} (R \cdot S)$
+>7. $S.y \in \mathop{\textsf{dom}} R \; \equiv \; y \in \mathop{\textsf{dom}} (R \cdot S)$ #needs-writeup 

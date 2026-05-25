@@ -3,5 +3,8 @@
 >[!iparam]
 >1. $A \in \textsf{Set}$
 
+>[!param]
+>1. $R\in A \sim A$
+
 >[!define]
->3. $\textsf{Symmetric part} = (\lambda R \mid R \in A \sim A : R \cap R^{\circ})$
+>2. $\mathop{\textsf{Symmetric part}} R = R \cap R^{\circ}$
