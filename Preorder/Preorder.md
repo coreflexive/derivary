@@ -7,7 +7,3 @@
 >[!assume]
 >1. [[Reflexive]] $R$
 >2. [[Transitive]] $R$
-
->[!define]
->1. $\simeq$ $=$ [[Symmetric part]] $R$
-

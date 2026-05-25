@@ -10,7 +10,7 @@
 
 >[!assume]
 >1. [[Simple]] $R$
->2. $x \in \mathop{\textsf{dom}} R$
+>2. $x \in$ [[Domain (set)|dom]] $R$
 
 >[!define] Apply
 >3. **apply** $R$ $x$ $\triangleq$ [[Iota|iota]] $(y \mid : y \mathbin{R} x)$

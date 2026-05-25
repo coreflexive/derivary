@@ -2,7 +2,7 @@
 
 >[!import]
 >3. [[Predicate]]
->4. [[Preorder]]
+>4. [[Equivalence]]
 
 >[!observe]
 >5. $(\forall x, y \mid \mathop{p} x \wedge \mathop{p} y : x \simeq y \equiv (\forall z \mid \mathop{p} z : z \mathbin{R} x \equiv z \mathbin{R} y))$ #needs-writeup
